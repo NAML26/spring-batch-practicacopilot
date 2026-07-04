@@ -1,7 +1,5 @@
 # Evidencia de uso de GitHub Copilot — spring-batch-final-calificaciones
 
-> Todos los prompts se hicieron desde el **Chat de Copilot**, no por autocompletado inline.
-
 ## Prompt 1 — pom.xml
 
 - **Prompt:**
@@ -198,8 +196,6 @@
 
 ## Anexo — Comparación adicional de BatchConfig (Copilot vs. mi implementación)
 
-*(No corresponde a un prompt nuevo; lo dejo como evidencia complementaria del refactor del Prompt 15.)*
-
 Comparé el `BatchConfig` generado por Copilot contra mi propia revisión del mismo archivo y corregí dos decisiones:
 
 **1. TransactionManager innecesariamente explícito**
@@ -220,6 +216,3 @@ Copilot usó:
 .rowMapper(new BeanPropertyRowMapper<>(Estudiante.class))
 ```
 Lo corregí con un `RowMapper` lambda explícito que solo setea `nombre`, `grupo` y `promedio` (los campos que realmente trae el SELECT), evitando el mapeo automático por reflexión sobre un objeto con más campos de los que trae el query.
-
----
-- **Carpeta `target/`:** es la salida de compilación de Maven; debe estar en `.gitignore`.
